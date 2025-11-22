@@ -1,4 +1,337 @@
 /* Placeholder CSS for Throneland LLC */
+    <style>
+        /* Foundation */
+        :root {
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --black: #0A0A0A;
+            --gray: #1A1A1A;
+            --accent: #2A2A2A;
+            --text-light: rgba(255,255,255,0.8);
+            --transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 2rem 4rem;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            letter-spacing: 0.3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, var(--gray) 0%, var(--black) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 100;
+            letter-spacing: 0.3em;
+            margin-top: 2rem;
+            color: var(--gold);
+            animation: fadeInUp 1.2s ease 0.3s forwards;
+        }
+
+        .hero-cta {
+            margin-top: 3rem;
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 8rem 4rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .tab.active {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        .tab:hover {
+            border-color: var(--gold);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .product-card {
+            background: var(--gray);
+            border: 1px solid var(--accent);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 2.5rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;  /* <- fixed this line */
+            line-height: 1.2;     /* <- keep this! */
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+          .product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;  /* <- fixed this line */
+    line-height: 1.2;     /* <- keep this! */
+}
+  margin-bottom: 1
+            line-height: 1.2;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .product-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-buy, .btn-details {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-buy {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .btn-buy:hover {
+            background: var(--white);
+        }
+
+        .btn-details {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-details:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem;
+            text-align: center;
+            border-top: 1px solid var(--accent);
+            margin-top: 8rem;
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .nav-menu {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 10vw, 6rem);
+            }
+
+            .categories {
+                padding: 4rem 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
 body { background: #000; color: #fff; font-family: Arial, sans-serif; }
 /* Dropdown Navigation */
 .nav-menu {
