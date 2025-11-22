@@ -76,14 +76,26 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; }
     100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.4); }
 }
 
-.dropdown-menu a:hover {
-    background: #111;
-    padding-left: 25px;
-    animation: goldPulse 1.5s infinite;
-    color: #ffd700;
+.dropdown-menu a,
+.submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: transparent;  /* Hide text initially */
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+.dropdown-menu a:hover,
 .submenu a:hover {
+    color: #000;  /* Black text for contrast */
+    background: #ffd700;  /* Full golden background */
+    padding-left: 25px;
     animation: goldPulse 1.5s infinite;
-    color: #ffd700;
+}
+
+/* Keep the parent visible */
+.dropdown > a {
+    color: #fff !important;  /* Always visible */
 }
