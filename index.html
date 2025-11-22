@@ -345,11 +345,24 @@
         <div class="nav-container">
             <div class="logo">THRONELAND</div>
             <ul class="nav-menu">
-                <li><a href="#humanoids">HUMANOID ROBOTS</a></li>
-                <li><a href="#mobile">MOBILE ROBOTS</a></li>
-                <li><a href="#stationary">STATIONARY ROBOTS</a></li>
-                <li><a href="#companion">COMPANION ROBOTS</a></li>
-                <li><a href="#upgrades">UPGRADE KITS</a></li>
+               <li class="dropdown">
+                        <a href="humanoid-robots.html">HUMANOID ROBOTS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="humanoid-robots.html">Browse Humanoids</a></li>
+                            <li class="has-submenu">
+                                <a href="humanoid-upgrades.html">Upgrades & Components</a>
+                                <ul class="submenu">
+                                    <li><a href="brains.html">Brains</a></li>
+                                    <li><a href="sensors.html">Sensors</a></li>
+                                    <li><a href="motion.html">Motion</a></li>
+                                    <li><a href="power.html">Power</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                <li><a href="mobile-robots.html">MOBILE ROBOTS</a></li>
+                <li><a href="stationary-robots.html">STATIONARY ROBOTS</a></li>
+                <li><a href="companion-robots.html">COMPANION ROBOTS</a></li>
             </ul>
         </div>
     </nav>
@@ -367,9 +380,9 @@
     <section class="categories" id="shop">
         <div class="category-tabs">
             <button class="tab active" onclick="filterProducts('all')">ALL COLLECTIONS</button>
-            <button class="tab" onclick="filterProducts('robots')">HUMANOID ROBOTS</button>
-            <button class="tab" onclick="filterProducts('jewelry')">RARE GEMSTONES</button>
-            <button class="tab" onclick="filterProducts('tech')">FUTURE TECH</button>
+            <button class="tab" onclick="filterProducts('robots')">Humanoid Robots</button>
+            <button class="tab" onclick="filterProducts('jewelry')">Rare Gemstones</button>
+            <button class="tab" onclick="filterProducts('tech')">Elite Technology</button>
         </div>
 
         <div class="product-grid" id="productGrid">
@@ -387,7 +400,7 @@
             robots: [
                 {
                     id: 'HR001',
-                    category: 'HUMANOID ROBOTICS',
+                    category: 'Humanoid Robots',
                     title: 'Genesis Alpha Companion',
                     price: '$47,999',
                     description: 'Ultra-realistic humanoid featuring advanced AI consciousness simulation and emotional response systems.',
