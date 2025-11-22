@@ -92,7 +92,7 @@ body { background: #000; color: #fff; font-family: Arial, sans-serif; }
     color: #000;  /* Black text for contrast */
     background: #ffd700;  /* Full golden background */
     padding-left: 25px;
-    animation: goldPulse 1.5s infinite;
+    animation: goldPulse 0.25s infinite;
 }
 
 /* Keep the parent visible */
