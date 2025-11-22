@@ -1,1 +1,83 @@
-<!-- Placeholder HTML for index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throneland - Luxury Tech & Humanoid Robots</title>
+    <meta name="description" content="Premium humanoid robots and luxury tech for the future-forward buyer">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial; background: #0a0a0a; color: #fff; }
+        nav { position: fixed; width: 100%; background: rgba(0,0,0,0.9); padding: 1.5rem; z-index: 1000; }
+        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(180deg, #000 0%, #1a1a1a 100%); }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); letter-spacing: 0.3em; font-weight: 100; }
+        .tagline { margin-top: 1rem; opacity: 0.7; letter-spacing: 0.1em; }
+        .products { padding: 4rem 2rem; max-width: 1400px; margin: 0 auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .product-card { background: #111; border: 1px solid #222; overflow: hidden; transition: all 0.3s; }
+        .product-card:hover { transform: translateY(-10px); border-color: #444; box-shadow: 0 20px 40px rgba(255,255,255,0.1); }
+        .product-img { width: 100%; height: 300px; object-fit: cover; }
+        .product-info { padding: 2rem; }
+        .product-title { font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 300; }
+        .product-price { font-size: 1.8rem; margin: 1rem 0; }
+        .btn-group { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .btn { padding: 1rem 2rem; text-decoration: none; text-align: center; transition: all 0.3s; flex: 1; }
+        .btn-primary { background: #fff; color: #000; }
+        .btn-secondary { border: 1px solid #fff; color: #fff; }
+        .btn:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div style="font-size: 1.5rem; letter-spacing: 0.2em;">THRONELAND</div>
+    </nav>
+    
+    <section class="hero">
+        <h1>THRONELAND</h1>
+        <p class="tagline">LUXURY HUMANOID ROBOTS & FUTURE TECH</p>
+    </section>
+    
+    <section class="products">
+        <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">HUMANOID COLLECTION</h2>
+        <div class="product-grid" id="products">
+            <!-- Products populate here via JavaScript -->
+        </div>
+    </section>
+
+    <script>
+        // Product template ready for your 50 humanoid robots
+        const products = [
+            {
+                id: 'HR001',
+                title: 'Luxury Humanoid Robot Alpha',
+                price: '$4,999',
+                image: 'placeholder.jpg',
+                affiliateLink: '#',
+                description: 'Premium AI companion engineered for elegance'
+            }
+            // Add your 50 products here
+        ];
+
+        function renderProducts() {
+            const grid = document.getElementById('products');
+            products.forEach(product => {
+                grid.innerHTML += `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.title}" class="product-img">
+                        <div class="product-info">
+                            <h3 class="product-title">${product.title}</h3>
+                            <p class="product-price">${product.price}</p>
+                            <div class="btn-group">
+                                <a href="${product.affiliateLink}" class="btn btn-primary">Buy Now</a>
+                                <a href="/shop" class="btn btn-secondary">Shop All</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>
