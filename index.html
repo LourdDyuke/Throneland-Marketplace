@@ -90,6 +90,7 @@
             background: linear-gradient(135deg, var(--white), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            cursor: pointer;
         }
 
         .nav-menu {
@@ -105,6 +106,7 @@
             letter-spacing: 0.1em;
             transition: var(--transition);
             position: relative;
+            cursor: pointer;
         }
 
         .nav-menu a::after {
@@ -177,6 +179,7 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .btn-primary::before {
@@ -199,10 +202,26 @@
             color: var(--black);
         }
 
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            filter: blur(100
+        /* Product Categories */
+        .categories {
+            padding: 8rem 4rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-weight: 300;
+            letter
