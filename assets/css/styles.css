@@ -272,7 +272,7 @@ nav {
 /* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
     gap: 3rem;
     opacity: 0;
     transform: translateY(30px);
@@ -304,7 +304,7 @@ nav {
 .product-img {
     width: 100%;
     max-width: 100%;
-    height: 250px;
+    height: 75px;
     object-fit: cover;
     transition: var(--transition);
 }
