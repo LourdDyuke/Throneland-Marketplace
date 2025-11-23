@@ -145,6 +145,21 @@ nav {
     font-size: 14px;
     transition: all 0.3s ease;
 }
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 1px solid var(--gold);
+}
+
+.category-nav {
+    background: linear-gradient(135deg, #C0C0C0 0%, #E0B8B8 100%);
+    backdrop-filter: blur(10px);
+}
+
+}
 
 /* Golden pulse animation */
 @keyframes goldPulse {
