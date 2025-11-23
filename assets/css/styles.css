@@ -431,7 +431,16 @@ nav {
     background: var(--gold);
     color: var(--black);
 }
-
+.back-button {
+    padding: 1rem 2rem;
+    background: var(--black);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+    
 /* Animations */
 @keyframes fadeInUp {
     to {
