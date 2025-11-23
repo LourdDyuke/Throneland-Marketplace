@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Throneland Editor</title>
+    <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/grapesjs"></script>
+</head>
+<body>
+    <div id="gjs"></div>
+    <button id="save-button" style="position: fixed; top: 10px; right: 10px; z-index: 999;">Save HTML</button>
+
+    <script>
+        const editor = grapesjs.init({
+            container: '#gjs',
+            fromElement: false,
+            height: '100vh',
+            width: 'auto',
+            storageManager: false,
+            panels: { defaults: [] },
+        });
+
+        // Load your existing HTML
+        fetch('index.html')
+            .then(res => res.text())
+            .then(html => {
+                editor.setComponents(html);
+            });
+
+        // Save button
+        document.getElementById('save-button').onclick = () => {
+            const html = editor.getHtml();
+            const css = editor.getCss();
+            const fullHtml = `<style>${css}</style>${html}`;
+            
+            const blob = new Blob([fullHtml], {type: 'text/html'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'edited-page.html';
+            a.click();
+        };
+    </script>
+</body>
+</html>
