@@ -71,7 +71,7 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 .back-to-marketplace {
-    position: relative;
+    position: fixed;
     top: 0;
     padding: 1rem 2rem;
     background: var(--black);
