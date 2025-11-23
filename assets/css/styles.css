@@ -70,6 +70,15 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.back-to-marketplace {
+    position: sticky;
+    top: 0;
+    padding: 1rem 2rem;
+    background: var(--black);
+    border-bottom: 2px solid var(--gold);
+    text-align: center;
+    z-index: 100;
+}
 
 .nav-menu {
     display: flex;
