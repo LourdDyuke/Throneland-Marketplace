@@ -280,6 +280,10 @@ nav {
 }
 
 .product-card {
+    <div class="product-card" data-category="brains">
+    <div class="product-card" data-category="motion">
+    <div class="product-card" data-category="sensor">
+    <div class="product-card" data-category="power">
     background: var(--gray);
     border: 1px solid var(--accent);
     overflow: hidden;
@@ -288,6 +292,10 @@ nav {
 }
 
 .product-card:hover {
+    <div class="product-card" data-category="brains">
+    <div class="product-card" data-category="motion">
+    <div class="product-card" data-category="sensor">
+    <div class="product-card" data-category="power">
     transform: translateY(-10px);
     border-color: var(--gold);
     box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);
@@ -301,6 +309,10 @@ nav {
 }
 
 .product-card:hover .product-img {
+    <div class="product-card" data-category="brains">
+    <div class="product-card" data-category="motion">
+    <div class="product-card" data-category="sensor">
+    <div class="product-card" data-category="power">
     transform: scale(1.05);
 }
 
