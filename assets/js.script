@@ -1,3 +1,24 @@
+// Tab switching with smooth fade
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active from all tabs
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        
+        // Add active to clicked tab
+        tab.classList.add('active');
+        
+        // Filter products (add data-category to your product cards first!)
+        const category = tab.textContent.toLowerCase();
+        document.querySelectorAll('.product-card').forEach(card => {
+            if(category === 'all' || card.dataset.category === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
 <script>
         // Product Database
         const products = {
@@ -64,43 +85,44 @@
         };
 
         // Render products
-        function renderProducts(filter = 'all') {
-            const grid = document.getElementById('productGrid');
-            Grid
-            
-            let productsToShow = [];
-            
-            if (filter === 'all') {
-                productsToShow = [...products.robots, ...products.jewelry, ...products.tech];
-            } else {
-                productsToShow = products[filter] || [];
-            }
-            
-            productsToShow.forEach(product => {
-                const card = `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.title}" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">${product.category}</div>
-                            <h3 class="product-title">${product.title}</h3>
-                            <div class="product-price">${product.price}</div>
-                            <p class="product-description">${product.description}</p>
-                            <div class="product-buttons">
-                                <a href="${product.affiliateLink}" class="btn-buy">BUY NOW</a>
-                                <a href="#" class="btn-details">DETAILS</a>
-                            </div>
-                        </div>
+function renderProducts(filter = 'all') {
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = ''; // Clear the grid first
+    
+    let productsToShow = [];
+    
+    if (filter === 'all') {
+        productsToShow = [...products.robots, ...products.jewelry, ...products.tech];
+    } else {
+        productsToShow = products[filter] || [];
+    }
+    
+    productsToShow.forEach(product => {
+        const card = `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.title}" class="product-img">
+                <div class="product-info">
+                    <div class="product-category">${product.category}</div>
+                    <h3 class="product-title">${product.title}</h3>
+                    <div class="product-price">${product.price}</div>
+                    <p class="product-description">${product.description}</p>
+                    <div class="product-buttons">
+                        <a href="${product.affiliateLink}" class="btn-buy">BUY NOW</a>
+                        <a href="#" class="btn-details">DETAILS</a>
                     </div>
-                `;
-                grid.innerHTML += card;
-            });
-            
-            // Reset animation
-            grid.style.animation = 'none';
-            setTimeout(() => {
-                grid.style.animation = '';
-            }, 10);
-        }
+                </div>
+            </div>
+        `;
+        grid.innerHTML += card;
+    });
+    
+    // Reset animation
+    grid.style.animation = 'none';
+    setTimeout(() => {
+        grid.style.animation = '';
+    }, 10);
+}
+
 
         // Filter products by category
         function filterProducts(category) {
