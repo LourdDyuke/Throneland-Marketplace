@@ -8,27 +8,6 @@
     --text-light: rgba(255,255,255,0.8);
     --transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
-// Tab switching with smooth fade
-document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active from all tabs
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        
-        // Add active to clicked tab
-        tab.classList.add('active');
-        
-        // Filter products (add data-category to your product cards first!)
-        const category = tab.textContent.toLowerCase();
-        document.querySelectorAll('.product-card').forEach(card => {
-            if(category === 'all' || card.dataset.category === category) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
-
 * {
     margin: 0;
     padding: 0;
@@ -158,8 +137,6 @@ nav {
     position: relative;
     background: linear-gradient(135deg, #C0C0C0 0%, #E0B8B8 100%);
     backdrop-filter: blur(10px);
-}
-
 }
 
 /* Golden pulse animation */
@@ -511,4 +488,11 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+.vfrc-chat {
+    z-index: 99 !important;
 }
+    
+ #voiceflow-chat { 
+        z-index: 99 !important; 
+ }
+    
